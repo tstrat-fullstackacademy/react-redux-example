@@ -1,9 +1,10 @@
-import { SET_COUNT, SET_NAME } from './actionCreators';
-
 const INITIAL_STATE = {
   count: 0,
   name: ''
 };
+
+const SET_COUNT = 'SET_COUNT';
+const SET_NAME = 'SET_NAME';
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -17,3 +18,17 @@ function reducer(state = INITIAL_STATE, action) {
 }
 
 export default reducer;
+
+export function setCount(newCount) {
+  return {
+    type: SET_COUNT,
+    payload: newCount
+  };
+}
+
+export function setName(newName) {
+  return {
+    type: SET_NAME,
+    payload: newName
+  };
+}
